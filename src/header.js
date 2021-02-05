@@ -1,13 +1,14 @@
 import {AppBar, Box, Container, IconButton, Toolbar, Typography} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
 import Button from "@material-ui/core/Button";
 import {makeStyles} from "@material-ui/core/styles";
+import HomeIcon from '@material-ui/icons/Home';
+import WbSunnyIcon from '@material-ui/icons/WbSunny';
 
 const useStyles = makeStyles((theme)=>({
     root:{
         flexGrow:1
     },
-    menuButton: {
+    homeButton: {
         marginRight:theme.spacing(1)
     },
     title:{
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme)=>({
         color: "black"
     }
 }))
-export default function Show_Menu()
+export default function Show_Header()
 {
     const classes=useStyles();
 
@@ -26,10 +27,14 @@ export default function Show_Menu()
         <AppBar position="fixed" className={classes.appBar}>
             <Container fixed>
                 <Toolbar>
-                    <IconButton edge='start' color='inherit' aria-label="menu" className={classes.menuButton}>
-                        <MenuIcon/>
+                    <IconButton edge='start' color='inherit' aria-label="home" className={classes.homeButton}>
+                        <WbSunnyIcon/>
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>Test project</Typography>
+                    <IconButton edge='start' color='inherit' aria-label="home" className={classes.homeButton}>
+                        <HomeIcon/>
+                    </IconButton>
+
+                    <Typography variant="h6" className={classes.title}>Servarium</Typography>
                     <Box mr={3}>
                         <Button color='inherit' variant="outlined">Log In</Button>
                     </Box>
